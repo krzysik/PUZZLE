@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01504E4C247C77A2009F04E3 /* success.wav in Resources */ = {isa = PBXBuildFile; fileRef = 01504E4B247C77A2009F04E3 /* success.wav */; };
 		0150CC7E247AEB9400A34B31 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0150CC7D247AEB9400A34B31 /* LevelViewController.swift */; };
 		01629633247BF0CD0060A744 /* EasyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01629632247BF0CD0060A744 /* EasyViewController.swift */; };
 		01AB1D36247B029900E6EAE3 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB1D35247B029900E6EAE3 /* HighScoreViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01504E4B247C77A2009F04E3 /* success.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = success.wav; sourceTree = "<group>"; };
 		0150CC7D247AEB9400A34B31 /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
 		01629632247BF0CD0060A744 /* EasyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyViewController.swift; sourceTree = "<group>"; };
 		01AB1D35247B029900E6EAE3 /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01504E48247C7750009F04E3 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				01504E4B247C77A2009F04E3 /* success.wav */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		01F79880247AD4AA00FA8D14 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		01F7988B247AD4AA00FA8D14 /* Puzzle */ = {
 			isa = PBXGroup;
 			children = (
+				01504E48247C7750009F04E3 /* Sound */,
 				01F7988C247AD4AA00FA8D14 /* AppDelegate.swift */,
 				01629632247BF0CD0060A744 /* EasyViewController.swift */,
 				01F7988E247AD4AA00FA8D14 /* SceneDelegate.swift */,
@@ -250,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01504E4C247C77A2009F04E3 /* success.wav in Resources */,
 				01F79899247AD4AB00FA8D14 /* LaunchScreen.storyboard in Resources */,
 				01F79896247AD4AB00FA8D14 /* Assets.xcassets in Resources */,
 				01F79894247AD4AA00FA8D14 /* Main.storyboard in Resources */,

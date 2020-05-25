@@ -1,10 +1,10 @@
 
     import UIKit
-
+    import AVFoundation
     class HardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         var level = 0
         var darkTheme = false
-
+   var audioPlayer:AVAudioPlayer?
         var toSolveImageArray = [UIImage]()
         var correctAns = [Int]()
         var wrongAns = Array(0..<16)
@@ -79,6 +79,14 @@
                 self.numberOfMoves += 1
                 self.lblMoves.text = "Moves: \(self.numberOfMoves)"
                 if self.wrongAns == self.correctAns {
+                    let pathToSound=Bundle.main.path(forResource: "success", ofType: "wav")!
+                    let url=URL(fileURLWithPath: pathToSound)
+                    do{
+                        self.audioPlayer=try AVAudioPlayer(contentsOf: url)
+                        self.audioPlayer?.play()
+                    }catch{
+                        
+                    }
                     let alert=UIAlertController(title: "You Won!", message: "Congratulations 👍", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                     let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { (action) in
