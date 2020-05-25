@@ -9,7 +9,12 @@
 import UIKit
 
 class LevelViewController: UIViewController {
+    @IBOutlet weak var Level2: UIButton!
+    @IBOutlet weak var Level3: UIButton!
+    @IBOutlet weak var Level4: UIButton!
+    @IBOutlet weak var Level5: UIButton!
     @IBOutlet weak var Level6: UIButton!
+    @IBOutlet weak var Level1: UIButton!
     @IBOutlet weak var Level7: UIButton!
     @IBOutlet weak var Level8: UIButton!
     @IBOutlet weak var Level9: UIButton!
@@ -70,6 +75,38 @@ class LevelViewController: UIViewController {
                self.navigationController?.pushViewController(vc,animated: true)
                UserDefaults.standard.set(10, forKey: "Level")
     }
+    @IBAction func Level1OnClick(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EasyViewController") as! EasyViewController
+        
+        self.navigationController?.pushViewController(vc,animated: true)
+        UserDefaults.standard.set(1, forKey: "Level")
+    }
+    @IBAction func Level2OnClick(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EasyViewController") as! EasyViewController
+        
+        self.navigationController?.pushViewController(vc,animated: true)
+        UserDefaults.standard.set(2, forKey: "Level")
+    }
+    @IBAction func Level3OnClick(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EasyViewController") as! EasyViewController
+        
+        self.navigationController?.pushViewController(vc,animated: true)
+        UserDefaults.standard.set(3, forKey: "Level")
+    }
+    @IBAction func Level4OnClick(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EasyViewController") as! EasyViewController
+               
+               self.navigationController?.pushViewController(vc,animated: true)
+               UserDefaults.standard.set(4, forKey: "Level")
+    }
+    @IBAction func Level5OnClick(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EasyViewController") as! EasyViewController
+               
+               self.navigationController?.pushViewController(vc,animated: true)
+               UserDefaults.standard.set(5, forKey: "Level")
+    }
+    
+    
     /*
     // MARK: - Navigation
 

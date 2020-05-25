@@ -122,12 +122,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="1"/>
+                                <connections>
+                                    <action selector="Level1OnClick:" destination="fIq-cb-RXb" eventType="touchUpInside" id="4uE-26-fPE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hc-mB-LK6">
                                 <rect key="frame" x="313" y="160" width="30" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="2"/>
+                                <connections>
+                                    <action selector="Level2OnClick:" destination="fIq-cb-RXb" eventType="touchUpInside" id="boJ-IG-oX4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latwy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9m-PW-jvR">
                                 <rect key="frame" x="172" y="122" width="58" height="27"/>
@@ -141,18 +147,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="3"/>
+                                <connections>
+                                    <action selector="Level3OnClick:" destination="fIq-cb-RXb" eventType="touchUpInside" id="h50-pv-agc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLC-TY-GmJ">
                                 <rect key="frame" x="313" y="204" width="30" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="4"/>
+                                <connections>
+                                    <action selector="Level4OnClick:" destination="fIq-cb-RXb" eventType="touchUpInside" id="uZi-6d-Psm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8v0-Ox-6iy">
                                 <rect key="frame" x="189" y="186" width="30" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="5"/>
+                                <connections>
+                                    <action selector="Level5OnClick:" destination="fIq-cb-RXb" eventType="touchUpInside" id="CdH-Cg-eMb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLP-Ft-PUv">
                                 <rect key="frame" x="71" y="315" width="30" height="36"/>
@@ -252,7 +267,12 @@
                         <outlet property="LabelHard" destination="e2P-Rr-qya" id="DZa-43-H6i"/>
                         <outlet property="LabelMedium" destination="AVn-GM-mbf" id="Y9O-cd-g81"/>
                         <outlet property="LabelSelect" destination="vwO-f6-OC8" id="mGJ-hl-ZXF"/>
+                        <outlet property="Level1" destination="wUi-o7-4uB" id="uaj-Gg-hkA"/>
                         <outlet property="Level10" destination="p7n-Ie-uy7" id="h4F-TW-cbJ"/>
+                        <outlet property="Level2" destination="6Hc-mB-LK6" id="PJc-KS-7D6"/>
+                        <outlet property="Level3" destination="aLC-TY-GmJ" id="BNo-RR-vVE"/>
+                        <outlet property="Level4" destination="aLC-TY-GmJ" id="dii-l5-WFn"/>
+                        <outlet property="Level5" destination="8v0-Ox-6iy" id="Nxt-q1-ekD"/>
                         <outlet property="Level6" destination="iLP-Ft-PUv" id="S9Z-Mz-zcg"/>
                         <outlet property="Level7" destination="w56-bX-Q15" id="7pP-P8-VGS"/>
                         <outlet property="Level8" destination="ItM-YR-R7e" id="fLM-lf-DYJ"/>
@@ -262,6 +282,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="He6-PD-6j6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1026.0869565217392" y="75.669642857142847"/>
+        </scene>
+        <!--Easy View Controller-->
+        <scene sceneID="Upv-Zd-4jc">
+            <objects>
+                <viewController storyboardIdentifier="EasyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ixT-LN-hDP" customClass="EasyViewController" customModule="Puzzle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QWO-Fn-bpC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Yb7-KY-2pc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="syn-o4-7Mc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="-580"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0150CC7E247AEB9400A34B31 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0150CC7D247AEB9400A34B31 /* LevelViewController.swift */; };
+		01629633247BF0CD0060A744 /* EasyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01629632247BF0CD0060A744 /* EasyViewController.swift */; };
 		01AB1D36247B029900E6EAE3 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB1D35247B029900E6EAE3 /* HighScoreViewController.swift */; };
 		01F7988D247AD4AA00FA8D14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F7988C247AD4AA00FA8D14 /* AppDelegate.swift */; };
 		01F7988F247AD4AA00FA8D14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F7988E247AD4AA00FA8D14 /* SceneDelegate.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		0150CC7D247AEB9400A34B31 /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		01629632247BF0CD0060A744 /* EasyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyViewController.swift; sourceTree = "<group>"; };
 		01AB1D35247B029900E6EAE3 /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 		01F79889247AD4AA00FA8D14 /* Puzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Puzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F7988C247AD4AA00FA8D14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				01F7988C247AD4AA00FA8D14 /* AppDelegate.swift */,
+				01629632247BF0CD0060A744 /* EasyViewController.swift */,
 				01F7988E247AD4AA00FA8D14 /* SceneDelegate.swift */,
 				01F79890247AD4AA00FA8D14 /* MainViewController.swift */,
 				01F79892247AD4AA00FA8D14 /* Main.storyboard */,
@@ -275,6 +278,7 @@
 				01AB1D36247B029900E6EAE3 /* HighScoreViewController.swift in Sources */,
 				01F7988D247AD4AA00FA8D14 /* AppDelegate.swift in Sources */,
 				01F7988F247AD4AA00FA8D14 /* SceneDelegate.swift in Sources */,
+				01629633247BF0CD0060A744 /* EasyViewController.swift in Sources */,
 				0150CC7E247AEB9400A34B31 /* LevelViewController.swift in Sources */,
 				01F798BD247AD53000FA8D14 /* ImageViewCVCell.swift in Sources */,
 				01F798C1247ADAE500FA8D14 /* ViewController.swift in Sources */,
