@@ -9,11 +9,11 @@
 import UIKit
 
 class HighScoreViewController: UIViewController {
-var Dark = false
+var darkTheme = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        Dark = UserDefaults.standard.bool(forKey: "Dark")
-        if(Dark == true){
+        darkTheme = UserDefaults.standard.bool(forKey: "Dark")
+        if(darkTheme == true){
             self.view.backgroundColor = UIColor.black
         }else{
             self.view.backgroundColor = UIColor.white

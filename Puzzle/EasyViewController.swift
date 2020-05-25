@@ -10,9 +10,9 @@ import UIKit
 
 class EasyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var level = 0
-    var Dark = false
+    var darkTheme = false
 
-    var questionImageArray = [UIImage]()
+    var toSolveImageArray = [UIImage]()
     var correctAns = [Int]()
     var wrongAns = Array(0..<4)
     var wrongImageArray=[UIImage]()
@@ -26,34 +26,34 @@ class EasyViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         level = UserDefaults.standard.integer(forKey: "Level")
         if(level == 1){
-            questionImageArray = [#imageLiteral(resourceName: "l1"),#imageLiteral(resourceName: "l2"),#imageLiteral(resourceName: "l4"),#imageLiteral(resourceName: "l3")]
+            toSolveImageArray = [#imageLiteral(resourceName: "l1"),#imageLiteral(resourceName: "l2"),#imageLiteral(resourceName: "l4"),#imageLiteral(resourceName: "l3")]
              correctAns = [0,1,3,2]
-             wrongImageArray = questionImageArray
+             wrongImageArray = toSolveImageArray
             
         }else if(level == 2){
-            questionImageArray = [#imageLiteral(resourceName: "l32"),#imageLiteral(resourceName: "l42"),#imageLiteral(resourceName: "l22"),#imageLiteral(resourceName: "l12")]
+            toSolveImageArray = [#imageLiteral(resourceName: "l32"),#imageLiteral(resourceName: "l42"),#imageLiteral(resourceName: "l22"),#imageLiteral(resourceName: "l12")]
            correctAns = [1,0,2,3]
-             wrongImageArray = questionImageArray
+             wrongImageArray = toSolveImageArray
         }else if(level == 3){
-            questionImageArray = [#imageLiteral(resourceName: "l13"),#imageLiteral(resourceName: "l33"),#imageLiteral(resourceName: "l43"),#imageLiteral(resourceName: "l23")]
+            toSolveImageArray = [#imageLiteral(resourceName: "l13"),#imageLiteral(resourceName: "l33"),#imageLiteral(resourceName: "l43"),#imageLiteral(resourceName: "l23")]
             correctAns = [0,3,1,2]
-              wrongImageArray = questionImageArray
+              wrongImageArray = toSolveImageArray
         }else if(level == 4){
-            questionImageArray = [#imageLiteral(resourceName: "l24"),#imageLiteral(resourceName: "l44"),#imageLiteral(resourceName: "l34"),#imageLiteral(resourceName: "l14")]
+            toSolveImageArray = [#imageLiteral(resourceName: "l24"),#imageLiteral(resourceName: "l44"),#imageLiteral(resourceName: "l34"),#imageLiteral(resourceName: "l14")]
             correctAns = [1,2,0,3]
-              wrongImageArray = questionImageArray
+              wrongImageArray = toSolveImageArray
         }else if(level == 5){
-            questionImageArray = [#imageLiteral(resourceName: "l45"),#imageLiteral(resourceName: "l25"),#imageLiteral(resourceName: "l35"),#imageLiteral(resourceName: "l15")]
+            toSolveImageArray = [#imageLiteral(resourceName: "l45"),#imageLiteral(resourceName: "l25"),#imageLiteral(resourceName: "l35"),#imageLiteral(resourceName: "l15")]
             correctAns = [0,2,1,3]
-              wrongImageArray = questionImageArray
+              wrongImageArray = toSolveImageArray
         }
         self.title = "Puzzle"
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Wroc",style: UIBarButtonItem.Style.plain,target: self,action:#selector(MainViewController.back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
-       var Dark = UserDefaults.standard.bool(forKey: "Dark")
-       if(Dark == true){
+       var darkTheme = UserDefaults.standard.bool(forKey: "Dark")
+       if(darkTheme == true){
            self.view.backgroundColor = UIColor.black
         lblMoves.textColor=UIColor.white
        }else{
@@ -86,7 +86,7 @@ class EasyViewController: UIViewController, UICollectionViewDelegate, UICollecti
             self.numberOfMoves += 1
             self.lblMoves.text = "Moves: \(self.numberOfMoves)"
             if self.wrongAns == self.correctAns {
-                let alert=UIAlertController(title: "You Won!", message: "Congratulations 👍", preferredStyle: .alert)
+                let alert=UIAlertController(title: "You Won!", message: "Congratulations :)", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                 let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { (action) in
                     self.restartGame()
@@ -101,7 +101,7 @@ class EasyViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func restartGame() {
         self.undoMovesArray.removeAll()
         wrongAns = Array(0..<4)
-        wrongImageArray = questionImageArray
+        wrongImageArray = toSolveImageArray
         firstIndexPath = nil
         secondIndexPath = nil
         self.numberOfMoves = 0
@@ -171,8 +171,8 @@ class EasyViewController: UIViewController, UICollectionViewDelegate, UICollecti
         myCollectionView.delegate=self
         myCollectionView.dataSource=self
         myCollectionView.register(ImageViewCVCell.self, forCellWithReuseIdentifier: "Cell")
-        var Dark = UserDefaults.standard.bool(forKey: "Dark")
-        if(Dark == true){
+        var darkTheme = UserDefaults.standard.bool(forKey: "Dark")
+        if(darkTheme == true){
             myCollectionView.backgroundColor = UIColor.black
         }else{
             myCollectionView.backgroundColor = UIColor.white

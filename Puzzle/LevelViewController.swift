@@ -19,7 +19,7 @@ class LevelViewController: UIViewController {
     @IBOutlet weak var Level8: UIButton!
     @IBOutlet weak var Level9: UIButton!
     @IBOutlet weak var Level10: UIButton!
-    var Dark = false
+    var darkTheme = false
     @IBOutlet weak var LabelSelect: UILabel!
     @IBOutlet weak var LabelEasy: UILabel!
     @IBOutlet weak var LabelMedium: UILabel!
@@ -27,8 +27,8 @@ class LevelViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var Dark = UserDefaults.standard.bool(forKey: "Dark")
-        if(Dark == true){
+        var darkTheme = UserDefaults.standard.bool(forKey: "Dark")
+        if(darkTheme == true){
             self.view.backgroundColor = UIColor.black
             LabelEasy.textColor=UIColor.white
             LabelHard.textColor=UIColor.white

@@ -10,9 +10,9 @@ import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var level = 0
-    var Dark = false
+    var darkTheme = false
 
-    var questionImageArray = [UIImage]()
+    var toSolveImageArray = [UIImage]()
     var correctAns = [Int]()
     var wrongAns = Array(0..<9)
     var wrongImageArray=[UIImage]()
@@ -26,34 +26,34 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         level = UserDefaults.standard.integer(forKey: "Level")
         if(level == 6){
-              questionImageArray = [#imageLiteral(resourceName: "9"), #imageLiteral(resourceName: "8"), #imageLiteral(resourceName: "4"), #imageLiteral(resourceName: "3"), #imageLiteral(resourceName: "7"), #imageLiteral(resourceName: "6"), #imageLiteral(resourceName: "5"), #imageLiteral(resourceName: "1"), #imageLiteral(resourceName: "2")]
+              toSolveImageArray = [#imageLiteral(resourceName: "9"), #imageLiteral(resourceName: "8"), #imageLiteral(resourceName: "4"), #imageLiteral(resourceName: "3"), #imageLiteral(resourceName: "7"), #imageLiteral(resourceName: "6"), #imageLiteral(resourceName: "5"), #imageLiteral(resourceName: "1"), #imageLiteral(resourceName: "2")]
              correctAns = [0,1,4,5,6,2,3,8,7]
-             wrongImageArray = questionImageArray
+             wrongImageArray = toSolveImageArray
             
         }else if(level == 7){
-            questionImageArray = [#imageLiteral(resourceName: "52"),#imageLiteral(resourceName: "62"),#imageLiteral(resourceName: "42"),#imageLiteral(resourceName: "32"),#imageLiteral(resourceName: "22"),#imageLiteral(resourceName: "92"),#imageLiteral(resourceName: "72"),#imageLiteral(resourceName: "82"),#imageLiteral(resourceName: "12")]
+            toSolveImageArray = [#imageLiteral(resourceName: "52"),#imageLiteral(resourceName: "62"),#imageLiteral(resourceName: "42"),#imageLiteral(resourceName: "32"),#imageLiteral(resourceName: "22"),#imageLiteral(resourceName: "92"),#imageLiteral(resourceName: "72"),#imageLiteral(resourceName: "82"),#imageLiteral(resourceName: "12")]
            correctAns = [5,7,6,1,0,2,3,4,8]
-             wrongImageArray = questionImageArray
+             wrongImageArray = toSolveImageArray
         }else if(level == 8){
-            questionImageArray = [#imageLiteral(resourceName: "43"),#imageLiteral(resourceName: "33"),#imageLiteral(resourceName: "63"),#imageLiteral(resourceName: "93"),#imageLiteral(resourceName: "53"),#imageLiteral(resourceName: "13"),#imageLiteral(resourceName: "73"),#imageLiteral(resourceName: "83"),#imageLiteral(resourceName: "23")]
+            toSolveImageArray = [#imageLiteral(resourceName: "43"),#imageLiteral(resourceName: "33"),#imageLiteral(resourceName: "63"),#imageLiteral(resourceName: "93"),#imageLiteral(resourceName: "53"),#imageLiteral(resourceName: "13"),#imageLiteral(resourceName: "73"),#imageLiteral(resourceName: "83"),#imageLiteral(resourceName: "23")]
             correctAns = [3,7,6,2,4,0,1,8,5]
-              wrongImageArray = questionImageArray
+              wrongImageArray = toSolveImageArray
         }else if(level == 9){
-            questionImageArray = [#imageLiteral(resourceName: "34"),#imageLiteral(resourceName: "74"),#imageLiteral(resourceName: "44"),#imageLiteral(resourceName: "84"),#imageLiteral(resourceName: "94"),#imageLiteral(resourceName: "54"),#imageLiteral(resourceName: "24"),#imageLiteral(resourceName: "14"),#imageLiteral(resourceName: "64")]
+            toSolveImageArray = [#imageLiteral(resourceName: "34"),#imageLiteral(resourceName: "74"),#imageLiteral(resourceName: "44"),#imageLiteral(resourceName: "84"),#imageLiteral(resourceName: "94"),#imageLiteral(resourceName: "54"),#imageLiteral(resourceName: "24"),#imageLiteral(resourceName: "14"),#imageLiteral(resourceName: "64")]
             correctAns = [4,3,1,8,5,2,0,6,7]
-              wrongImageArray = questionImageArray
+              wrongImageArray = toSolveImageArray
         }else if(level == 10){
-            questionImageArray = [#imageLiteral(resourceName: "85"),#imageLiteral(resourceName: "25"),#imageLiteral(resourceName: "75"),#imageLiteral(resourceName: "35"),#imageLiteral(resourceName: "65"),#imageLiteral(resourceName: "45"),#imageLiteral(resourceName: "55"),#imageLiteral(resourceName: "15"),#imageLiteral(resourceName: "95")]
+            toSolveImageArray = [#imageLiteral(resourceName: "85"),#imageLiteral(resourceName: "25"),#imageLiteral(resourceName: "75"),#imageLiteral(resourceName: "35"),#imageLiteral(resourceName: "65"),#imageLiteral(resourceName: "45"),#imageLiteral(resourceName: "55"),#imageLiteral(resourceName: "15"),#imageLiteral(resourceName: "95")]
             correctAns = [8,0,2,4,6,5,3,1,7]
-              wrongImageArray = questionImageArray
+              wrongImageArray = toSolveImageArray
         }
         self.title = "Puzzle"
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Wroc",style: UIBarButtonItem.Style.plain,target: self,action:#selector(MainViewController.back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
-       var Dark = UserDefaults.standard.bool(forKey: "Dark")
-       if(Dark == true){
+       var darkTheme = UserDefaults.standard.bool(forKey: "Dark")
+       if(darkTheme == true){
            self.view.backgroundColor = UIColor.black
         lblMoves.textColor=UIColor.white
        }else{
@@ -101,7 +101,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func restartGame() {
         self.undoMovesArray.removeAll()
         wrongAns = Array(0..<9)
-        wrongImageArray = questionImageArray
+        wrongImageArray = toSolveImageArray
         firstIndexPath = nil
         secondIndexPath = nil
         self.numberOfMoves = 0
