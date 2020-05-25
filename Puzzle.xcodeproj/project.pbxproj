@@ -20,6 +20,7 @@
 		01F798AF247AD4AC00FA8D14 /* PuzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F798AE247AD4AC00FA8D14 /* PuzzleUITests.swift */; };
 		01F798BD247AD53000FA8D14 /* ImageViewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F798BC247AD53000FA8D14 /* ImageViewCVCell.swift */; };
 		01F798C1247ADAE500FA8D14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F798C0247ADAE500FA8D14 /* ViewController.swift */; };
+		DE2FB1D7247C33B50094BA10 /* HardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FB1D6247C33B50094BA10 /* HardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		01F798B0247AD4AC00FA8D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01F798BC247AD53000FA8D14 /* ImageViewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCVCell.swift; sourceTree = "<group>"; };
 		01F798C0247ADAE500FA8D14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE2FB1D6247C33B50094BA10 /* HardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				01F798C0247ADAE500FA8D14 /* ViewController.swift */,
 				0150CC7D247AEB9400A34B31 /* LevelViewController.swift */,
 				01AB1D35247B029900E6EAE3 /* HighScoreViewController.swift */,
+				DE2FB1D6247C33B50094BA10 /* HardViewController.swift */,
 			);
 			path = Puzzle;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				01F79891247AD4AA00FA8D14 /* MainViewController.swift in Sources */,
 				01AB1D36247B029900E6EAE3 /* HighScoreViewController.swift in Sources */,
+				DE2FB1D7247C33B50094BA10 /* HardViewController.swift in Sources */,
 				01F7988D247AD4AA00FA8D14 /* AppDelegate.swift in Sources */,
 				01F7988F247AD4AA00FA8D14 /* SceneDelegate.swift in Sources */,
 				01629633247BF0CD0060A744 /* EasyViewController.swift in Sources */,

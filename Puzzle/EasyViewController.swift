@@ -50,7 +50,7 @@ class EasyViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.title = "Puzzle"
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: "Wroc",style: UIBarButtonItem.Style.plain,target: self,action:#selector(MainViewController.back(sender:)))
+        let newBackButton = UIBarButtonItem(title: "<Back",style: UIBarButtonItem.Style.plain,target: self,action:#selector(MainViewController.back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
        var darkTheme = UserDefaults.standard.bool(forKey: "Dark")
        if(darkTheme == true){
@@ -227,7 +227,7 @@ class EasyViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     let btnUndo: UIButton = {
         let btn=UIButton(type: .system)
-        btn.setTitle("Undo", for: .normal)
+        btn.setTitle("Back", for: .normal)
         btn.setTitleColor(UIColor.red, for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints=false
         return btn

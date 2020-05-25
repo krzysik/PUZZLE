@@ -9,6 +9,11 @@
 import UIKit
 
 class LevelViewController: UIViewController {
+    @IBOutlet weak var Level11: UIButton!
+    @IBOutlet weak var Level12: UIButton!
+    @IBOutlet weak var Level13: UIButton!
+    @IBOutlet weak var Level14: UIButton!
+    @IBOutlet weak var Level15: UIButton!
     @IBOutlet weak var Level2: UIButton!
     @IBOutlet weak var Level3: UIButton!
     @IBOutlet weak var Level4: UIButton!
@@ -106,7 +111,41 @@ class LevelViewController: UIViewController {
                UserDefaults.standard.set(5, forKey: "Level")
     }
     
+    @IBAction func Level11OnClick(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HardViewController") as! HardViewController
+               
+               self.navigationController?.pushViewController(vc,animated: true)
+               UserDefaults.standard.set(11, forKey: "Level")
+    }
     
+    @IBAction func Level12OnClick(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HardViewController") as! HardViewController
+               
+               self.navigationController?.pushViewController(vc,animated: true)
+               UserDefaults.standard.set(12, forKey: "Level")
+    }
+    
+    @IBAction func Level13OnClick(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HardViewController") as! HardViewController
+               
+               self.navigationController?.pushViewController(vc,animated: true)
+               UserDefaults.standard.set(13, forKey: "Level")
+        
+    }
+    
+    @IBAction func Level14OnClick(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HardViewController") as! HardViewController
+               
+               self.navigationController?.pushViewController(vc,animated: true)
+               UserDefaults.standard.set(14, forKey: "Level")
+    }
+    
+    @IBAction func Level15OnClick(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HardViewController") as! HardViewController
+               
+               self.navigationController?.pushViewController(vc,animated: true)
+               UserDefaults.standard.set(15, forKey: "Level")
+    }
     /*
     // MARK: - Navigation
 
