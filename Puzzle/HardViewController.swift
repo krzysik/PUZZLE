@@ -1,6 +1,7 @@
 
     import UIKit
     import AVFoundation
+import FirebaseDatabase
     class HardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         var level = 0
         var darkTheme = false
@@ -11,12 +12,13 @@
         var wrongImageArray=[UIImage]()
         var undoMovesArray = [(first: IndexPath, second: IndexPath)]()
         var numberOfMoves = 0
-        
+        var ref:DatabaseReference?
         var firstIndexPath: IndexPath?
         var secondIndexPath: IndexPath?
         
         override func viewDidLoad() {
             super.viewDidLoad()
+               ref = Database.database().reference()
             level = UserDefaults.standard.integer(forKey: "Level")
             if(level == 11){
                 toSolveImageArray = [#imageLiteral(resourceName: "row-4-col-4"), #imageLiteral(resourceName: "row-4-col-3"), #imageLiteral(resourceName: "row-4-col-2"), #imageLiteral(resourceName: "row-4-col-1"), #imageLiteral(resourceName: "row-3-col-4"), #imageLiteral(resourceName: "row-3-col-3"), #imageLiteral(resourceName: "row-3-col-2"), #imageLiteral(resourceName: "row-3-col-1"), #imageLiteral(resourceName: "row-2-col-4"), #imageLiteral(resourceName: "row-2-col-3"),#imageLiteral(resourceName: "row-2-col-2"),#imageLiteral(resourceName: "row-2-col-1"),#imageLiteral(resourceName: "row-1-col-4"),#imageLiteral(resourceName: "row-1-col-3"),#imageLiteral(resourceName: "row-1-col-2"),#imageLiteral(resourceName: "row-1-col-1")]
@@ -86,6 +88,17 @@
                         self.audioPlayer?.play()
                     }catch{
                         
+                    }
+                    if(self.level==11){
+                        self.ref?.child("Hard").child("Level11").child("Score").setValue(self.numberOfMoves)
+                    }else if(self.level==12){
+                        self.ref?.child("Hard").child("Level12").child("Score").setValue(self.numberOfMoves)
+                    }else if(self.level==13){
+                        self.ref?.child("Hard").child("Level13").child("Score").setValue(self.numberOfMoves)
+                    }else if(self.level==14){
+                        self.ref?.child("Hard").child("Level14").child("Score").setValue(self.numberOfMoves)
+                    }else if(self.level==15){
+                        self.ref?.child("Hard").child("Level15").child("Score").setValue(self.numberOfMoves)
                     }
                     let alert=UIAlertController(title: "You Won!", message: "Congratulations 👍", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)

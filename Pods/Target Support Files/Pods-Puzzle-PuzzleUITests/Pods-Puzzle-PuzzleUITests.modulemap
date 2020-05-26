@@ -1,0 +1,6 @@
+framework module Pods_Puzzle_PuzzleUITests {
+  umbrella header "Pods-Puzzle-PuzzleUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

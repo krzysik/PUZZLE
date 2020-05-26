@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseDatabase
 class ViewController: UIViewController {
     @IBOutlet weak var Highscore: UIButton!
     @IBOutlet weak var Switch: UISwitch!

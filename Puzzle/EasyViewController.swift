@@ -7,9 +7,10 @@
 //
 import AVFoundation
 import UIKit
-
+import FirebaseDatabase
 class EasyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var level = 0
+    var ref:DatabaseReference?
     var darkTheme = false
     var audioPlayer:AVAudioPlayer?
     var toSolveImageArray = [UIImage]()
@@ -24,6 +25,7 @@ class EasyViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         level = UserDefaults.standard.integer(forKey: "Level")
         if(level == 1){
             toSolveImageArray = [#imageLiteral(resourceName: "l1"),#imageLiteral(resourceName: "l2"),#imageLiteral(resourceName: "l4"),#imageLiteral(resourceName: "l3")]
@@ -93,6 +95,17 @@ class EasyViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     self.audioPlayer?.play()
                 }catch{
                     
+                }
+                if(self.level==1){
+                    self.ref?.child("Easy").child("Level1").child("Score").setValue(self.numberOfMoves)
+                }else if(self.level==2){
+                    self.ref?.child("Easy").child("Level2").child("Score").setValue(self.numberOfMoves)
+                }else if(self.level==3){
+                    self.ref?.child("Easy").child("Level3").child("Score").setValue(self.numberOfMoves)
+                }else if(self.level==4){
+                    self.ref?.child("Easy").child("Level4").child("Score").setValue(self.numberOfMoves)
+                }else if(self.level==5){
+                    self.ref?.child("Easy").child("Level5").child("Score").setValue(self.numberOfMoves)
                 }
                 let alert=UIAlertController(title: "You Won!", message: "Congratulations :)", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
