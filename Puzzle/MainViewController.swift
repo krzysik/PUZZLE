@@ -201,21 +201,21 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         myCollectionView.heightAnchor.constraint(equalTo: myCollectionView.widthAnchor).isActive=true
         
         self.view.addSubview(btnSwap)
-        btnSwap.widthAnchor.constraint(equalToConstant: 200).isActive=true
+        btnSwap.widthAnchor.constraint(equalToConstant: 374).isActive=true
         btnSwap.topAnchor.constraint(equalTo: myCollectionView.bottomAnchor, constant: 20).isActive=true
         btnSwap.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         btnSwap.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnSwap.addTarget(self, action: #selector(btnSwapAction), for: .touchUpInside)
         
         self.view.addSubview(btnUndo)
-        btnUndo.widthAnchor.constraint(equalToConstant: 200).isActive=true
+        btnUndo.widthAnchor.constraint(equalToConstant: 374).isActive=true
         btnUndo.topAnchor.constraint(equalTo: btnSwap.bottomAnchor, constant: 30).isActive=true
         btnUndo.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         btnUndo.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnUndo.addTarget(self, action: #selector(btnUndoAction), for: .touchUpInside)
         
         self.view.addSubview(lblMoves)
-        lblMoves.widthAnchor.constraint(equalToConstant: 200).isActive=true
+        lblMoves.widthAnchor.constraint(equalToConstant: 374).isActive=true
         lblMoves.topAnchor.constraint(equalTo: btnUndo.bottomAnchor, constant: 20).isActive=true
         lblMoves.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         lblMoves.heightAnchor.constraint(equalToConstant: 50).isActive=true
@@ -235,7 +235,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     let btnSwap: UIButton = {
         let btn=UIButton(type: .system)
         btn.setTitle("Swap", for: .normal)
+        btn.setTitleColor(UIColor.black, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        btn.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         btn.translatesAutoresizingMaskIntoConstraints=false
         return btn
     }()
@@ -243,7 +245,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     let btnUndo: UIButton = {
         let btn=UIButton(type: .system)
         btn.setTitle("Undo", for: .normal)
-        btn.setTitleColor(UIColor.red, for: .normal)
+        btn.setTitleColor(UIColor.black, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        btn.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         btn.translatesAutoresizingMaskIntoConstraints=false
         return btn
     }()
@@ -251,6 +255,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     let lblMoves: UILabel = {
         let lbl=UILabel()
         lbl.textAlignment = .center
+        lbl.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
     }()

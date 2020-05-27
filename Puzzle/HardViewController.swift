@@ -69,8 +69,7 @@ import FirebaseDatabase
                 myCollectionView.moveItem(at: start, to: end)
                 myCollectionView.moveItem(at: end, to: start)
             }) { (finished) in
-                // update data source here
-    //            print(wrongAns)
+
                 self.myCollectionView.deselectItem(at: start, animated: true)
                 self.myCollectionView.deselectItem(at: end, animated: true)
                 self.firstIndexPath = nil
@@ -133,7 +132,6 @@ import FirebaseDatabase
                 myCollectionView.moveItem(at: start, to: end)
                 myCollectionView.moveItem(at: end, to: start)
             }) { (finished) in
-                // update data source here
                 self.wrongImageArray.swapAt(start.item, end.item)
                 self.wrongAns.swapAt(start.item, end.item)
                 self.undoMovesArray.removeLast()
@@ -194,21 +192,21 @@ import FirebaseDatabase
             myCollectionView.heightAnchor.constraint(equalTo: myCollectionView.widthAnchor).isActive=true
             
             self.view.addSubview(btnSwap)
-            btnSwap.widthAnchor.constraint(equalToConstant: 200).isActive=true
+            btnSwap.widthAnchor.constraint(equalToConstant: 374).isActive=true
             btnSwap.topAnchor.constraint(equalTo: myCollectionView.bottomAnchor, constant: 20).isActive=true
             btnSwap.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
             btnSwap.heightAnchor.constraint(equalToConstant: 50).isActive=true
             btnSwap.addTarget(self, action: #selector(btnSwapAction), for: .touchUpInside)
             
             self.view.addSubview(btnUndo)
-            btnUndo.widthAnchor.constraint(equalToConstant: 200).isActive=true
+            btnUndo.widthAnchor.constraint(equalToConstant: 374).isActive=true
             btnUndo.topAnchor.constraint(equalTo: btnSwap.bottomAnchor, constant: 30).isActive=true
             btnUndo.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
             btnUndo.heightAnchor.constraint(equalToConstant: 50).isActive=true
             btnUndo.addTarget(self, action: #selector(btnUndoAction), for: .touchUpInside)
             
             self.view.addSubview(lblMoves)
-            lblMoves.widthAnchor.constraint(equalToConstant: 200).isActive=true
+            lblMoves.widthAnchor.constraint(equalToConstant: 374).isActive=true
             lblMoves.topAnchor.constraint(equalTo: btnUndo.bottomAnchor, constant: 20).isActive=true
             lblMoves.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
             lblMoves.heightAnchor.constraint(equalToConstant: 50).isActive=true
@@ -228,7 +226,9 @@ import FirebaseDatabase
         let btnSwap: UIButton = {
             let btn=UIButton(type: .system)
             btn.setTitle("Swap", for: .normal)
+            btn.setTitleColor(UIColor.black, for: .normal)
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+            btn.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             btn.translatesAutoresizingMaskIntoConstraints=false
             return btn
         }()
@@ -236,7 +236,9 @@ import FirebaseDatabase
         let btnUndo: UIButton = {
             let btn=UIButton(type: .system)
             btn.setTitle("Undo", for: .normal)
-            btn.setTitleColor(UIColor.red, for: .normal)
+            btn.setTitleColor(UIColor.black, for: .normal)
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+            btn.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             btn.translatesAutoresizingMaskIntoConstraints=false
             return btn
         }()
@@ -244,6 +246,7 @@ import FirebaseDatabase
         let lblMoves: UILabel = {
             let lbl=UILabel()
             lbl.textAlignment = .center
+            lbl.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
             lbl.translatesAutoresizingMaskIntoConstraints=false
             return lbl
         }()
@@ -251,14 +254,5 @@ import FirebaseDatabase
 
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 

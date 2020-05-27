@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var Button: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-       UserDefaults.standard.set(false, forKey: "Dark")
+        UserDefaults.standard.set(false, forKey: "Dark")
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "puzzle.png" )!)
             
         // Do any additional setup after loading the view.
     }
@@ -36,14 +37,10 @@ class ViewController: UIViewController {
     }
     @IBAction func ThemeOnSwitch(_ sender: UISwitch) {
         if(sender.isOn == true){
-            self.view.backgroundColor = UIColor.black
-            LabelTheme.textColor=UIColor.white
-            LabelWelcome.textColor=UIColor.white
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "puzzle2.png" )!)
             UserDefaults.standard.set(true, forKey: "Dark")
         }else{
-            self.view.backgroundColor = UIColor.white
-            LabelTheme.textColor=UIColor.black
-            LabelWelcome.textColor=UIColor.black
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "puzzle.png" )!)
             UserDefaults.standard.set(false, forKey: "Dark")
             
         }

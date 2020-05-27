@@ -21,6 +21,7 @@ class LevelHighscoreViewController: UIViewController {
     @IBOutlet weak var Level3Score: UILabel!
     @IBOutlet weak var Level4Score: UILabel!
     @IBOutlet weak var Level5Score: UILabel!
+    @IBOutlet weak var DifficultyLabel: UILabel!
     override func viewDidLoad() {
         ref = Database.database().reference()
         super.viewDidLoad()
@@ -34,6 +35,8 @@ class LevelHighscoreViewController: UIViewController {
         
         let level = UserDefaults.standard.string(forKey: "Level")
         if(level == "Easy"){
+            
+            self.DifficultyLabel.text = "Easy"
          self.ref?.child("Easy").child("Level1").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let score = value?["Score"] as! Int
@@ -77,6 +80,7 @@ class LevelHighscoreViewController: UIViewController {
         }
     }
        else if(level == "Medium"){
+            self.DifficultyLabel.text = "Medium"
              self.ref?.child("Medium").child("Level6").observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
                 let score = value?["Score"] as! Int
@@ -120,6 +124,7 @@ class LevelHighscoreViewController: UIViewController {
             }
         }
         else if(level == "Hard"){
+            self.DifficultyLabel.text = "Hard"
              self.ref?.child("Hard").child("Level11").observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
                 let score = value?["Score"] as! Int
