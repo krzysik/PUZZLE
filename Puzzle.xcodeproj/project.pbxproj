@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,7 @@
 		8D58356C46E07FDDBB98F725 /* Pods_Puzzle_PuzzleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA1F9BF874855E62D701B05 /* Pods_Puzzle_PuzzleUITests.framework */; };
 		DCAE7E5F0A8B95AC0E392A8E /* Pods_Puzzle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D20CAEE0E00B68BBA8C5283 /* Pods_Puzzle.framework */; };
 		DE2FB1D7247C33B50094BA10 /* HardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FB1D6247C33B50094BA10 /* HardViewController.swift */; };
+		DE36264C247E972700702007 /* LevelHighscoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36264B247E972700702007 /* LevelHighscoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		C22D84F1A124ACF9AEE3C20A /* Pods-Puzzle-PuzzleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Puzzle-PuzzleUITests.debug.xcconfig"; path = "Target Support Files/Pods-Puzzle-PuzzleUITests/Pods-Puzzle-PuzzleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CEA1F9BF874855E62D701B05 /* Pods_Puzzle_PuzzleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Puzzle_PuzzleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2FB1D6247C33B50094BA10 /* HardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardViewController.swift; sourceTree = "<group>"; };
+		DE36264B247E972700702007 /* LevelHighscoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelHighscoreViewController.swift; sourceTree = "<group>"; };
 		F570D3F022C193E517D91DB6 /* Pods-Puzzle-PuzzleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Puzzle-PuzzleUITests.release.xcconfig"; path = "Target Support Files/Pods-Puzzle-PuzzleUITests/Pods-Puzzle-PuzzleUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +151,7 @@
 				01F79895247AD4AB00FA8D14 /* Assets.xcassets */,
 				01F79897247AD4AB00FA8D14 /* LaunchScreen.storyboard */,
 				01F7989A247AD4AB00FA8D14 /* Info.plist */,
+				DE36264B247E972700702007 /* LevelHighscoreViewController.swift */,
 				01F798BC247AD53000FA8D14 /* ImageViewCVCell.swift */,
 				01F798C0247ADAE500FA8D14 /* ViewController.swift */,
 				0150CC7D247AEB9400A34B31 /* LevelViewController.swift */,
@@ -187,7 +190,6 @@
 				946D5D5A17AC2D8EA6990631 /* Pods-PuzzleTests.debug.xcconfig */,
 				3A8F2CEE3A6F7B27AF1A7674 /* Pods-PuzzleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -448,6 +450,7 @@
 				01F7988D247AD4AA00FA8D14 /* AppDelegate.swift in Sources */,
 				01F7988F247AD4AA00FA8D14 /* SceneDelegate.swift in Sources */,
 				01629633247BF0CD0060A744 /* EasyViewController.swift in Sources */,
+				DE36264C247E972700702007 /* LevelHighscoreViewController.swift in Sources */,
 				0150CC7E247AEB9400A34B31 /* LevelViewController.swift in Sources */,
 				01F798BD247AD53000FA8D14 /* ImageViewCVCell.swift in Sources */,
 				01F798C1247ADAE500FA8D14 /* ViewController.swift in Sources */,

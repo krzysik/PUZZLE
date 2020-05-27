@@ -20,7 +20,7 @@ import FirebaseDatabase
             super.viewDidLoad()
                ref = Database.database().reference()
             level = UserDefaults.standard.integer(forKey: "Level")
-            if(level == 11){
+            if(level == 11){	
                 toSolveImageArray = [#imageLiteral(resourceName: "row-4-col-4"), #imageLiteral(resourceName: "row-4-col-3"), #imageLiteral(resourceName: "row-4-col-2"), #imageLiteral(resourceName: "row-4-col-1"), #imageLiteral(resourceName: "row-3-col-4"), #imageLiteral(resourceName: "row-3-col-3"), #imageLiteral(resourceName: "row-3-col-2"), #imageLiteral(resourceName: "row-3-col-1"), #imageLiteral(resourceName: "row-2-col-4"), #imageLiteral(resourceName: "row-2-col-3"),#imageLiteral(resourceName: "row-2-col-2"),#imageLiteral(resourceName: "row-2-col-1"),#imageLiteral(resourceName: "row-1-col-4"),#imageLiteral(resourceName: "row-1-col-3"),#imageLiteral(resourceName: "row-1-col-2"),#imageLiteral(resourceName: "row-1-col-1")]
                  correctAns = [15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0]
                  wrongImageArray = toSolveImageArray

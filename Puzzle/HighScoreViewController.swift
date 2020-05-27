@@ -8,28 +8,43 @@
 
 import UIKit
 
-class HighScoreViewController: UIViewController {
-var darkTheme = false
+class HighScoreViewController: UIViewController 	{
+    
+    
+    var darkTheme = false
+    
+    @IBAction func EasyOnClick(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LevelHighscoreViewController") as! LevelHighscoreViewController
+        
+        self.navigationController?.pushViewController(vc,animated: true)
+        UserDefaults.standard.set("Easy", forKey: "Level")
+    }
+    @IBAction func MediumOnClick(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LevelHighscoreViewController") as! LevelHighscoreViewController
+        
+        self.navigationController?.pushViewController(vc,animated: true)
+        UserDefaults.standard.set("Medium", forKey: "Level")
+    }
+    @IBAction func HardOnClick(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LevelHighscoreViewController") as! LevelHighscoreViewController
+        
+        self.navigationController?.pushViewController(vc,animated: true)
+        UserDefaults.standard.set("Hard", forKey: "Level")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         darkTheme = UserDefaults.standard.bool(forKey: "Dark")
         if(darkTheme == true){
             self.view.backgroundColor = UIColor.black
         }else{
             self.view.backgroundColor = UIColor.white
         }
-        // Do any additional setup after loading the view.
+        
+        
     }
+
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
