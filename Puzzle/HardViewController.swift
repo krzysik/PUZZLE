@@ -89,15 +89,70 @@ import FirebaseDatabase
                         
                     }
                     if(self.level==11){
-                        self.ref?.child("Hard").child("Level11").child("Score").setValue(self.numberOfMoves)
+                          self.ref?.child("Hard").child("Level11").observeSingleEvent(of: .value, with: { (snapshot) in
+                            if snapshot.exists(){
+                                         let value = snapshot.value as? NSDictionary
+                                             let score = value?["Score"] as! Int
+                                             if(score>self.numberOfMoves){
+                                                 self.ref?.child("Hard").child("Level11").child("Score").setValue(self.numberOfMoves)
+                                             }
+                            }else{
+                                self.ref?.child("Hard").child("Level11").child("Score").setValue(self.numberOfMoves)
+                            }   }){(error)in
+                                                        print(error.localizedDescription)
+                                                    }
                     }else if(self.level==12){
-                        self.ref?.child("Hard").child("Level12").child("Score").setValue(self.numberOfMoves)
+                       self.ref?.child("Hard").child("Level12").observeSingleEvent(of: .value, with: { (snapshot) in
+                        if snapshot.exists(){
+                        let value = snapshot.value as? NSDictionary
+                            let score = value?["Score"] as! Int
+                            if(score>self.numberOfMoves){
+                                self.ref?.child("Hard").child("Level12").child("Score").setValue(self.numberOfMoves)
+                            }
+                        }else{
+                            self.ref?.child("Hard").child("Level12").child("Score").setValue(self.numberOfMoves)
+                        }   }){(error)in
+                                       print(error.localizedDescription)
+                                   }
                     }else if(self.level==13){
-                        self.ref?.child("Hard").child("Level13").child("Score").setValue(self.numberOfMoves)
+                        self.ref?.child("Hard").child("Level13").observeSingleEvent(of: .value, with: { (snapshot) in
+                             if snapshot.exists(){
+                        let value = snapshot.value as? NSDictionary
+                            let score = value?["Score"] as! Int
+                            if(score>self.numberOfMoves){
+                                self.ref?.child("Hard").child("Level13").child("Score").setValue(self.numberOfMoves)
+                            }
+                            }else{
+                                self.ref?.child("Hard").child("Level13").child("Score").setValue(self.numberOfMoves)
+                            }    }){(error)in
+                                       print(error.localizedDescription)
+                                   }
                     }else if(self.level==14){
-                        self.ref?.child("Hard").child("Level14").child("Score").setValue(self.numberOfMoves)
+                       self.ref?.child("Hard").child("Level14").observeSingleEvent(of: .value, with: { (snapshot) in
+                         if snapshot.exists(){
+                       let value = snapshot.value as? NSDictionary
+                           let score = value?["Score"] as! Int
+                           if(score>self.numberOfMoves){
+                               self.ref?.child("Hard").child("Level14").child("Score").setValue(self.numberOfMoves)
+                           }
+                        }else{
+                            self.ref?.child("Hard").child("Level14").child("Score").setValue(self.numberOfMoves)
+                        }   }){(error)in
+                                      print(error.localizedDescription)
+                                  }
                     }else if(self.level==15){
-                        self.ref?.child("Hard").child("Level15").child("Score").setValue(self.numberOfMoves)
+                       self.ref?.child("Hard").child("Level15").observeSingleEvent(of: .value, with: { (snapshot) in
+                        if snapshot.exists(){
+                        let value = snapshot.value as? NSDictionary
+                            let score = value?["Score"] as! Int
+                            if(score>self.numberOfMoves){
+                                self.ref?.child("Hard").child("Level15").child("Score").setValue(self.numberOfMoves)
+                            }
+                        }else{
+                            self.ref?.child("Hard").child("Level15").child("Score").setValue(self.numberOfMoves)
+                        }    }){(error)in
+                                       print(error.localizedDescription)
+                                   }
                     }
                     let alert=UIAlertController(title: "You Won!", message: "Congratulations 👍", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)

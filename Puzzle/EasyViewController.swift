@@ -19,7 +19,7 @@ class EasyViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var wrongImageArray=[UIImage]()
     var undoMovesArray = [(first: IndexPath, second: IndexPath)]()
     var numberOfMoves = 0
-    
+
     var firstIndexPath: IndexPath?
     var secondIndexPath: IndexPath?
     
@@ -95,15 +95,77 @@ class EasyViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     
                 }
                 if(self.level==1){
-                    self.ref?.child("Easy").child("Level1").child("Score").setValue(self.numberOfMoves)
+                    
+                    self.ref?.child("Easy").child("Level1").observeSingleEvent(of: .value, with: { (snapshot) in
+                        if snapshot.exists(){
+                        let value = snapshot.value as? NSDictionary
+                        let score = value?["Score"] as! Int
+                        print(score)
+                        if(score>self.numberOfMoves){
+                            self.ref?.child("Easy").child("Level1").child("Score").setValue(self.numberOfMoves)
+                        }
+                        }else{
+                            self.ref?.child("Easy").child("Level1").child("Score").setValue(self.numberOfMoves)
+                        }}){(error)in
+                                   print(error.localizedDescription)
+                               }
+                    
+                    
                 }else if(self.level==2){
-                    self.ref?.child("Easy").child("Level2").child("Score").setValue(self.numberOfMoves)
+                      self.ref?.child("Easy").child("Level2").observeSingleEvent(of: .value, with: { (snapshot) in
+                         if snapshot.exists(){
+                                     let value = snapshot.value as? NSDictionary
+                                         let score = value?["Score"] as! Int
+                                         if(score>self.numberOfMoves){
+                                             self.ref?.child("Easy").child("Level2").child("Score").setValue(self.numberOfMoves)
+                                         }
+                        }else{
+                        self.ref?.child("Easy").child("Level2").child("Score").setValue(self.numberOfMoves)
+                        }
+                        }){(error)in
+                                                    print(error.localizedDescription)
+                                                }
                 }else if(self.level==3){
-                    self.ref?.child("Easy").child("Level3").child("Score").setValue(self.numberOfMoves)
+                      self.ref?.child("Easy").child("Level3").observeSingleEvent(of: .value, with: { (snapshot) in
+                        if snapshot.exists(){
+                                     let value = snapshot.value as? NSDictionary
+                                         let score = value?["Score"] as! Int
+                                         if(score>self.numberOfMoves){
+                                             self.ref?.child("Easy").child("Level3").child("Score").setValue(self.numberOfMoves)
+                                         }
+                        }else{
+                        self.ref?.child("Easy").child("Level3").child("Score").setValue(self.numberOfMoves)
+                        }}){(error)in
+                                                    print(error.localizedDescription)
+                                                }
                 }else if(self.level==4){
-                    self.ref?.child("Easy").child("Level4").child("Score").setValue(self.numberOfMoves)
+                       self.ref?.child("Easy").child("Level4").observeSingleEvent(of: .value, with: { (snapshot) in
+                         if snapshot.exists(){
+                                     let value = snapshot.value as? NSDictionary
+                                         let score = value?["Score"] as! Int
+                                         if(score>self.numberOfMoves){
+                                             self.ref?.child("Easy").child("Level4").child("Score").setValue(self.numberOfMoves)
+                                         }
+                        }else{
+                        self.ref?.child("Easy").child("Level4").child("Score").setValue(self.numberOfMoves)
+                        }
+                        
+                       }){(error)in
+                                                    print(error.localizedDescription)
+                                                }
                 }else if(self.level==5){
-                    self.ref?.child("Easy").child("Level5").child("Score").setValue(self.numberOfMoves)
+                       self.ref?.child("Easy").child("Level5").observeSingleEvent(of: .value, with: { (snapshot) in
+                         if snapshot.exists(){
+                                     let value = snapshot.value as? NSDictionary
+                                         let score = value?["Score"] as! Int
+                                         if(score>self.numberOfMoves){
+                                             self.ref?.child("Easy").child("Level5").child("Score").setValue(self.numberOfMoves)
+                                         }
+                        }else{
+                        self.ref?.child("Easy").child("Level5").child("Score").setValue(self.numberOfMoves)
+                        }}){(error)in
+                                                    print(error.localizedDescription)
+                                                }
                 }
                 let alert=UIAlertController(title: "You Won!", message: "Congratulations :)", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
